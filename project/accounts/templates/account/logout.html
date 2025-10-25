@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログアウト</title>
+</head>
+<body>
+    <h2>ログアウト</h2>
+    <p>本当にログアウトしますか？</p>
+    <form method="post" action="{% url 'accounts:logout' %}">
+        {% csrf_token %}
+        <button type="submit">ログアウト</button>
+    </form>
+</body>
+</html>
