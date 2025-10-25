@@ -22,9 +22,7 @@ wheels/
 MANIFEST
 
 # Django
-*.sqlite3
-*.db
-db.sqlite3
+
 *.log
 *.pot
 *.pyc
