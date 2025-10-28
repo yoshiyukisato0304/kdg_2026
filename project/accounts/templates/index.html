@@ -1,8 +1,0 @@
-<h1>ログイン成功！ここはダミーのページです</h1>
-<p>後で作るindex.htmlに置き換えます</p>
-<h2>ログアウト</h2>
-<p>本当にログアウトしますか？</p>
-<form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">ログアウト</button>
-</form>
