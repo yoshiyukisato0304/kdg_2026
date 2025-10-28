@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import UserLoginView,LogoutcheckView ,UserLogoutView
+from .views import logoutcheck  # 関数を直接インポート
+from . import views
 
-app_name = 'accounts'
 
 urlpatterns = [
-    path('login/', UserLoginView.as_view(), name='login'),
-    path('logout/check', LogoutcheckView.as_view(), name='logoutcheck'),
-    path('logout/approval', UserLogoutView.as_view(), name='logout'),
+    path('', views.UserLoginView.as_view(), name='login'),
+    path('logout/', logoutcheck, name='logout'),
 ]
