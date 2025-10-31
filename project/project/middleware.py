@@ -10,7 +10,7 @@ class LoginRequiredMiddleware:
         allowed_urls = [settings.LOGIN_URL, '/signup/']
 
         # 空パスならログインページにリダイレクト
-        if request.path == '/accouts/':
+        if request.path == '/accounts/':
             return redirect(settings.LOGIN_URL)
 
         # ログインしていない & 許可URL以外
