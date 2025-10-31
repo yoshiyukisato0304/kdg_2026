@@ -1,9 +1,7 @@
 from django.urls import path
-from .views import logoutcheck  # 関数を直接インポート
-from . import views
-
+from .views import loginview, logoutcheck
 
 urlpatterns = [
-    path('', views.UserLoginView.as_view(), name='login'),
+    path('', loginview, name='login'),
     path('logout/', logoutcheck, name='logout'),
 ]
