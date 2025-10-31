@@ -23,6 +23,8 @@ MANIFEST
 
 # Django
 
+*.sqlite3
+*.db
 *.log
 *.pot
 *.pyc
