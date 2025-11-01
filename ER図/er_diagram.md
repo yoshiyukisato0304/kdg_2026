@@ -8,6 +8,12 @@ erDiagram
         string password
         int experience_points
         int role_id FK
+        string avatar_url      
+        %% プロフィール画像
+        string banner_url      
+        %% バナー画像
+        string bio             
+        %% 一言コメント
     }
 
     Role {
