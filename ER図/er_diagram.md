@@ -56,6 +56,7 @@ erDiagram
         int uploader_id FK
         string title
         string file_path
+        %% 実際のファイルは Django の FileField で管理
         int difficulty
         int reward
         boolean is_cleared
@@ -68,8 +69,9 @@ erDiagram
         int bugfile_id FK
         int challenger_id FK
         string file_path
+        %% 提出ファイルも Django の FileField で扱う
         text message
-        %% "status" は "pending" / "approved" / "rejected" のいずれか
+        %% status は "pending" / "approved" / "rejected"
         string status
         datetime created_at
     }
