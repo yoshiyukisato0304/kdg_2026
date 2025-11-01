@@ -1,5 +1,6 @@
 ```mermaid
 erDiagram
+    %% --- ユーザー・ロール関連 ---
     User {
         int id PK
         string username
@@ -58,6 +59,18 @@ erDiagram
         int difficulty
         int reward
         boolean is_cleared
+        int cleared_by_id FK 
+        datetime created_at
+    }
+
+    Submission {
+        int id PK
+        int bugfile_id FK
+        int challenger_id FK
+        string file_path
+        text message
+        %% "status" は "pending" / "approved" / "rejected" のいずれか
+        string status
         datetime created_at
     }
 
@@ -81,6 +94,10 @@ erDiagram
     Checkpoint ||--o{ CheckpointProgress : "追跡される"
 
     User ||--o{ BugFile : "アップロードする"
+    User ||--o{ Submission : "提出する"
+    BugFile ||--o{ Submission : "への提出"
+
     BugFile ||--o{ RewardTransaction : "報酬対象"
     User ||--o{ RewardTransaction : "支払う"
     User ||--o{ RewardTransaction : "受け取る"
+```
